@@ -1,0 +1,25 @@
+{
+  "name": "hamok-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "replicated-storage": "npm run build && node lib/replicatedStorageDemo.js",
+    "pubsub": "npm run build && node lib/pubsubDemo.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.js src/*",
+    "build": "tsc",
+    "test": "jest --config jest.config.js --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bufbuild/protobuf": "1.0.0",
+    "@hamok-dev/hamok-js-core": "1.0.1-SNAPSHOT.62fd8af1dd93b78356689ce4875e0b3afeeb8358"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5"
+  }
+}
